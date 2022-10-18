@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "4dc9b88e-6bda-4692-83f2-3cec1aa84cc8",
+		"name": "Delivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5430/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5430",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5430/api/product/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5430",
+							"path": [
+								"api",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "36872480-f793-47c2-a536-08daaf09bddc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5430/api/product/list/:ids",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5430",
+							"path": [
+								"api",
+								"product",
+								"list",
+								":ids"
+							],
+							"variable": [
+								{
+									"key": "ids",
+									"value": "36872480-f793-47c2-a536-08daaf09bddc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
